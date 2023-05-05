@@ -1,0 +1,163 @@
+1. Diseñar un algoritmo donde al ingresar un numero me indique que día de la semana es,
+de lo contrario si ese día no esta en el rango de la semana mostrar un mensaje indicándome que tal
+valor no están en la semana. (15%)
+
+
+<?php
+$day = array("domingo","lunes","martes","miércoles","jueves","viernes","sábado");
+
+$number = 0;
+
+if ($number <= "6") {
+  echo "Goog luck, today is ". $day[$number];
+}
+   if ($number > "6") {
+      echo "Day no found!";
+}
+?>
+ 
+
+
+2.En este ejercicio vamos a modificar y trabajar con strings, debe mostrar los 6 resultados de la
+consulta,
+ anexar al principio de cada resultado el punto al que corresponde.
+ *Cree una variable y asígnale el valor "Programar en php es realmente bueno"
+ *Reemplaze la palabra de la cadena de texto "realmente" por la palabra "muy".
+ *Determine la posición de la palabra "php".
+ *Compruebe si en la cadena de texto existe la palabra "bueno" y retorne (true o false).
+ *Invierte el orden de la cadena de texto.
+ *Cuente cuántas vocales "a" hay en la cadena de texto. (20%)
+ 
+ 
+<?php
+
+$txt = "Programar en php es realmente bueno!";
+echo "<br>". $txt;
+
+$chang = str_replace("realmente", "muy", $txt);
+echo "<br> In chache it'll be: " . $chang;
+
+$brow   = "php";
+$posicion = strrpos($chang, $brow);
+echo "<br>The pisition of word php: ". $posicion;
+
+$brow2   = "bueno";
+$comprobar = strrpos($chang, $brow2);
+if ($comprobar === false) {
+    echo "<br>NO, word no found!!!";
+    } else {
+            echo "<br>Nice!!! you word  (bueno) is position: ".$comprobar;
+ }
+echo "<br>";
+
+$invest = strrev( $chang );
+ echo $invest;
+echo "<br>";
+
+$vowel = 0;
+foreach (count_chars($chang, 1) as $i => $cant) 
+	{
+	if (preg_match('/[a]/i',chr($i)))
+            {
+	        $vowel = $vowel + $cant;
+	        } 					
+	}
+echo "<br> Vowels: $vowel <br>";
+?>
+
+3. Dado el siguiente array:
+$numeros = array(2007, 30005, 1445, 2268, 78531, 36987, 44120, 7785. 5524, 23, 4475, 8856)
+almacenar en dos nuevos arrays los números pares e impares (30%)
+4. Dado el sigueinte array de objetos el cual contiene nombre y fechas de nacimiento de personas
+$fechas = [
+['nombre' => 'Juliana', 'fecha_nacimiento' => '1995-05-03'],
+['nombre' => 'Pedro', 'fecha_nacimiento' => '1980-01-03'],
+['nombre' => 'Alejandra', 'fecha_nacimiento' => '1990-02-28'],
+['nombre' => 'Juan', 'fecha_nacimiento' => '1995-05-03'],
+['nombre' => 'Jerson', 'fecha_nacimiento' => '1971-12-31'],
+['nombre' => 'Sergio', 'fecha_nacimiento' => '1992-05-13'],
+['nombre' => 'Marcela', 'fecha_nacimiento' => '1996-10-01'],
+['nombre' => 'Eimer', 'fecha_nacimiento' => '2000-06-04'],
+['nombre' => 'Luis', 'fecha_nacimiento' => '1999-11-17'],
+['nombre' => 'Sofia', 'fecha_nacimiento' => '1950-02-02'],
+['nombre' => 'Mateo', 'fecha_nacimiento' => '1985-09-13'],
+['nombre' => 'Maria', 'fecha_nacimiento' => '1971-03-13'],
+['nombre' => 'Lucas', 'fecha_nacimiento' => '1966-01-01'],
+['nombre' => 'Brayan', 'fecha_nacimiento' => '1995-07-03'],
+['nombre' => 'Roberto', 'fecha_nacimiento' => '2010-06-06'],
+['nombre' => 'Ana', 'fecha_nacimiento' => '2019-09-04'],
+['nombre' => 'Santiago', 'fecha_nacimiento' => '2006-04-01'],
+['nombre' => 'Mariana', 'fecha_nacimiento' => '2021-02-14']
+];
+calcular la edad de cada persona y si esta en un rango entre 0 y 18 años agregar el nombre de la persona
+en un nuevo array con nombre jóvenes.
+Si esta en un rango entre 19 y 35 años agregar el nombre de la persona a un nuevo array con nombre
+adulto y si es mayor a 35 agregar el nombre de la persona en nuevo array con nombre mayor. (35%)
+
+
+Prueba javascript
+
+1. cuál es la diferencia entre var, let y const? (10%)
+Las tres son variables, donde  (var) es un dato general que puede ser cambiado o modificado y se puede declarar nuevamente;
+(let) es un dato que puede ser cambiado o modificado pero no puede ser declarado mas de una vez;
+(const) es un dato fijo que no puede ser modificado, cambiado y por ende no se puede declarar mas de una vez.
+
+2. Explica la diferencia entre '==' y '====' (15%)
+"==" se considerea una igualdad exacta entre don valores, donde matematicamente su valor debe ser una igualdad real.
+"===" se considera una de tipo logico donde se evalua la igualdad de dos valores.
+
+3. A partir del siguiente array, retornar el texto mas largo entre todos los elementos. (20%)
+var valores = [“js el mejor lenguaje”, “programar web”, “Brendan Eich”, "sergio", "almacen"];
+
+4. según cuatro valores dados devolver la siguiente información (25%)
+
+4.1 Numero mayor
+
+4.2 Numero menor y distinto de cero
+var numero1 = 5;
+ var numero2 = -8;
+ var numero3 = "6";
+ var numero4 = 0;
+
+5. A partir del siguiente array de personas mapear los siguientes datos (30%)
+
+5.1 Nombre completo
+
+5.2 Cantidad de amigos
+
+EJ: [
+ {
+ nombre_completo: 'Antonio Rodriguez',
+ cantidad_amigos: 3,
+ }
+]
+const personas = [
+ {
+ id: 1,
+ nombre: 'Antonio',
+ apellido: 'Rodriguez',
+ amigos: ['Sergio','Rafael', 'Anne'],
+ },
+ {
+ id: 2,
+ nombre: 'Ramiro',
+ apellido: 'Meza',
+ amigos: ['Eduardo', 'Luis']
+ },
+ {
+ id: 3,
+ nombre: 'Antonela',
+ apellido: 'Garcia',
+ amigos: ['Raul', 'Rodrigo', 'Paula']
+ },
+ {
+ id: 4,
+ nombre: 'Daniela',
+ apellido: 'Gomez',
+ amigos: ['Rafael', 'Gabriel']
+ } ]
+
+
+
+
+
